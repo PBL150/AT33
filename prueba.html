@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AT33 | STEM Racing Team</title>
+<meta name="description" content="AT33 es un equipo de STEM Racing dedicado al diseño, análisis y fabricación de vehículos de competición.">
+<meta name="author" content="AT33 STEM Racing Team">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.at33stemracingteam.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.at33stemracingteam.netlify.app/">
+<meta property="og:title" content="AT33 | STEM Racing Team">
+<meta property="og:image" content="Logo.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Racing Team","name":"AT33 STEM Racing Team","url":"https://www.at33stemracingteam.netlify.app/","logo":"https://www.at33stemracingteam.netlify.app/Logo.png","memberOf":{"@type":"Organization","name":"STEM Racing"},"address":{"@type":"PostalAddress","addressLocality":"Madrid","addressCountry":"ES"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="AT33.png"/>
+<style>
+:root {
+    --principal:  #212643;
+    --secundario: #66221d;
+    --bg-deep:    #0a0a0a;
+    --bg-alt:     #0f0f0f;
+    --surface:    #141414;
+    --b-blue:     rgba(33,38,67,0.95);
+    --b-red:      rgba(102,34,29,0.40);
+    --blanco:     #ffffff;
+    --ease:       cubic-bezier(0.4,0,0.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Carter One',cursive;}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg-deep);-webkit-font-smoothing:antialiased;}
+body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+
+/* Clases de utilidad */
+.img-hero { width: min(500px, 80vw); }
+.stem-h2 { font-size: clamp(3rem, 10vw, 6rem); color: var(--principal); text-transform: uppercase; width: 100%; }
+.stem-p { font-size: 1.4rem; opacity: 0.75; margin-top: 15px; }
+
+/* SECCIÓN NOSOTROS AJUSTADA */
+.nosotros-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nosotros-texto-col { flex: 1; min-width: 300px; text-align: left; }
+.nosotros-img-col { flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; }
+.img-nosotros { max-width: 100%; max-height: 500px; object-fit: contain; display: block; }
+
+@media(max-width: 950px) {
+    .nosotros-contenedor { flex-direction: column; text-align: center; }
+    .nosotros-texto-col { text-align: center; order: 3; }
+    .nosotros-img-col { order: 2; }
+    .nosotros-contenedor .stem-h2 { order: 1; }
+}
+
+.coche-div-wrap { width: 100%; }
+.coche-h2 { margin-bottom: 50px; text-transform: uppercase; font-size: clamp(2rem, 5vw, 3.5rem); }
+
+.cta-divider { width: 80%; max-width: 900px; height: 1px; background: linear-gradient(90deg,transparent,#212643,#4a5ba8,#66221d,transparent); margin: 40px auto; }
+.cta-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.cta-title{ font-size:clamp(2.5rem,5vw,4rem); text-transform:uppercase; margin-bottom:25px; }
+.cta-text{ max-width:650px; margin:0 auto 40px; color:rgba(255,255,255,.65); line-height:1.8; font-size:1.1rem; }
+
+#cookie-banner{ position:fixed;bottom:30px;left:50%; transform:translateX(-50%) translateY(150%); width:90%;max-width:850px; background:var(--surface);border:1px solid var(--b-blue); box-shadow:0 0 0 1px var(--b-red),0 20px 40px rgba(0,0,0,.7); border-radius:16px;display:flex;justify-content:space-between; align-items:center;padding:20px 30px;z-index:9999; transition:transform .8s var(--ease); }
+#cookie-banner.show{transform:translateX(-50%) translateY(0);}
+.cookie-content{text-align:left;}
+.cookie-content p{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.5;}
+.cookie-content a{color:var(--blanco);text-decoration:underline;text-underline-offset:3px;}
+.btn-cookie-accept{ background:#2b3461;color:var(--blanco);border:none; padding:12px 25px;border-radius:10px;font-family:'Carter One',cursive; font-size:.8rem;cursor:pointer;text-transform:uppercase;letter-spacing:1px; transition:background .3s,transform .3s;margin-left:25px;white-space:nowrap; }
+.btn-cookie-accept:hover{background:#353f7a;transform:scale(1.05);}
+@media(max-width:800px){ #cookie-banner{flex-direction:column;text-align:center;padding:25px;gap:15px;}.cookie-content{text-align:center;}.btn-cookie-accept{margin-left:0;width:100%;} }
+
+.nav-wrap{ position:fixed;top:0;left:0;width:100%; z-index:5000;display:flex;flex-direction:column; align-items:center;padding-top:22px; pointer-events:none; }
+.nav-main{ background:var(--surface); border:1px solid var(--b-blue); box-shadow:0 0 0 1px var(--b-red); width:90%;max-width:1200px;height:68px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
+.nav-main.sub-open{border-radius:16px 16px 0 0;}
+.nav-logo{height:38px;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-links a{ color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-links a:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-links a.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+.nav-links a.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+.nav-inicio-btn{ display:flex;align-items:center;gap:7px; color:var(--blanco);font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65;background:none;border:none; font-family:'Carter One',cursive;cursor:pointer; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-inicio-btn.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+.nav-inicio-btn.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+.chevron{ display:inline-block;width:7px;height:7px; border-right:2px solid currentColor;border-bottom:2px solid currentColor; transform:rotate(45deg);transition:transform .35s var(--ease); margin-top:-2px;flex-shrink:0; }
+.chevron.up{transform:rotate(-135deg);margin-top:2px;}
+.nav-sub{ width:90%;max-width:1200px; background:var(--surface); border:1px solid var(--b-blue);border-top:none; box-shadow:0 0 0 1px var(--b-red),0 16px 32px rgba(0,0,0,.6); border-radius:0 0 16px 16px; display:flex;align-items:center;justify-content:center; gap:8px; pointer-events:auto; max-height:0;overflow:hidden;opacity:0;padding:0 24px; transition:max-height .4s var(--ease),opacity .35s var(--ease),padding .4s var(--ease); }
+.nav-sub.open{max-height:100px;opacity:1;padding:14px 24px;}
+.nav-sub a{ color:var(--blanco);text-decoration:none;font-size:.78rem; text-transform:uppercase;letter-spacing:1px;padding:9px 18px; border-radius:9px;opacity:.6; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-sub a:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-sub a.section-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);}
+.nav-sub a.section-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);}
+
+@media (min-width: 1001px) { .nav-mob-pill, .nav-mob-panel, .nav-mob-overlay { display: none !important; } }
+@media(max-width:1000px){ .nav-wrap{ display:none; } .nav-mob-pill{ position:fixed;top:28px;right:28px;z-index:5000;width:52px;height:52px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px var(--b-red),0 8px 24px rgba(0,0,0,.6);border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto; } .nav-mob-pill .menu-toggle{ display:flex;flex-direction:column;gap:5px;pointer-events:none; } .nav-mob-pill .menu-toggle span{width:22px;height:2px;background:var(--blanco);transition:.4s var(--ease);} .nav-mob-panel{ position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);z-index:5000;width:270px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px var(--b-red),0 24px 60px rgba(0,0,0,.8);border-radius:22px;padding:44px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease); } .nav-mob-panel.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);} .nav-mob-close{ position:absolute;top:13px;right:13px;width:30px;height:30px;background:rgba(33,38,67,.4);border:1px solid var(--b-blue);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center; } .nav-mob-close::before,.nav-mob-close::after{content:'';position:absolute;width:14px;height:2px;background:white;transform:rotate(45deg);} .nav-mob-close::after{transform:rotate(-45deg);} .nav-mob-logo{height:30px;margin-bottom:12px;} .nav-mob-panel a.mob-page-link, .nav-mob-panel button.mob-inicio-btn{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.95rem; text-transform:uppercase;letter-spacing:1px;padding:10px 16px; border-radius:10px;opacity:.7; transition:background .25s,opacity .25s; background:none;border:none;font-family:'Carter One',cursive;cursor:pointer; display:flex;align-items:center;justify-content:center;gap:7px; } .nav-mob-panel a.mob-page-link:hover, .nav-mob-panel button.mob-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;} .nav-mob-panel a.mob-page-link.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);} .nav-mob-panel a.mob-page-link.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);} .nav-mob-panel button.mob-inicio-btn.page-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);} .nav-mob-panel button.mob-inicio-btn.page-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);} .nav-mob-sub{ width:100%; overflow:hidden;max-height:0;opacity:0; transition:max-height .4s var(--ease),opacity .3s var(--ease); display:flex;flex-direction:column;gap:2px; background:rgba(33,38,67,.12); border-radius:10px; padding:0 6px; } .nav-mob-sub.open{max-height:280px;opacity:1;padding:6px;} .nav-mob-sub a{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.85rem; text-transform:uppercase;letter-spacing:1px;padding:9px 12px; border-radius:8px;opacity:.65; transition:background .2s,opacity .2s; } .nav-mob-sub a:hover{background:rgba(102,34,29,.35);opacity:1;} .nav-mob-sub a.section-active{background:var(--principal);opacity:1;box-shadow:0 0 0 1px var(--b-blue);} .nav-mob-sub a.section-active:hover{background:var(--secundario);box-shadow:0 0 0 1px var(--b-red);} .nav-mob-overlay{ position:fixed;inset:0;z-index:4999; background:rgba(0,0,0,.5); opacity:0;pointer-events:none; transition:opacity .35s var(--ease); } .nav-mob-overlay.open{opacity:1;pointer-events:auto;} }
+
+section{ height:auto; min-height:100vh; width:100%;display:flex;flex-direction:column; align-items:center;justify-content:center;scroll-snap-align:start; position:relative;padding:80px 5%;overflow:hidden; }
+#inicio        {background:var(--bg-deep);}
+#nosotros      {background:var(--bg-alt);}
+#coche-sec     {background:var(--bg-deep);}
+#donar         {background:var(--bg-alt);}
+#patrocinadores{ background:var(--bg-deep); height: auto; min-height: 100vh; padding-top: 140px; padding-bottom: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; }.divider{height:1px;width:100%;scroll-snap-align:none;background:linear-gradient(90deg,transparent,#212643,#4a5ba8,#66221d,transparent);}
+.spacer{height:8vh;width:100%;scroll-snap-align:none;background:var(--bg-deep);}
+.spacer-alt{background:var(--bg-alt);}
+.reveal{opacity:0;transform:translateY(50px) scale(.96);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease);will-change:transform,opacity;}
+.reveal.active{opacity:1;transform:translateY(0) scale(1);}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.float-logo{animation:float 6s ease-in-out infinite;}
+.coche-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;width:100%;max-width:1000px;margin:0 auto;}
+.coche-box{height:280px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px rgba(33,38,67,.45);border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;cursor:zoom-in;transition:border-color .3s,box-shadow .3s;}
+.coche-box:hover{border-color:#4a5ba8;box-shadow:0 0 0 1px var(--secundario),0 8px 24px rgba(0,0,0,.5);}
+.coche-box img{width:100%;height:100%;object-fit:contain;transition:transform 1.2s var(--ease);padding:20px;}
+.patrocinadores-title{font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase;margin-bottom:40px;}
+.sponsor-level{width:100%;margin-bottom:60px;}
+.sponsor-level-title{color:white;margin-bottom:25px;letter-spacing:2px;text-transform:uppercase;font-size:1.1rem;}
+.sponsor-grid-oro,.sponsor-grid-plata,.sponsor-grid-bronce{display:flex;justify-content:center;align-items:center;gap:25px;flex-wrap:wrap;}
+.sponsor-box{background:rgba(33,38,67,.10);border-radius:24px;display:flex;align-items:center;justify-content:center;padding:30px;border:1px solid transparent;transition:.5s var(--ease);overflow:hidden;}
+.sponsor-box:hover{background:rgba(33,38,67,.20);border-color:rgba(74,91,168,.40);transform:translateY(-5px);}
+.sponsor-box.oro{width:420px;height:220px;}.sponsor-box.plata{width:320px;height:180px;}.sponsor-box.bronce{width:240px;height:140px;}
+.sponsor-logo{width:100%;height:100%;object-fit:contain;filter:grayscale(100%) brightness(2);opacity:.8;transition:.5s var(--ease);}
+.sponsor-box:hover .sponsor-logo{filter:grayscale(0%) brightness(1);opacity:1;}
+.btn-buy{display:inline-block;padding:18px 45px;background:var(--principal);color:var(--blanco);text-decoration:none;border-radius:12px;border:1px solid var(--b-blue);border-bottom:4px solid #161a2d;box-shadow:0 4px 16px rgba(33,38,67,.4);transition:all .2s var(--ease);cursor:pointer;text-transform:uppercase;font-size:.9rem;margin-top:20px;position:relative;z-index:5;}
+.btn-buy:hover{transform:scale(1.05);background:#2b3461;}
+.btn-buy:active{transform:scale(.95) translateY(2px);border-bottom-width:2px;}
+footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 1px 0 var(--b-red);padding:80px 8% 40px;text-align:left;scroll-snap-align:end;color:var(--blanco);}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
+.footer-col h4{text-transform:uppercase;font-size:1.1rem;margin-bottom:25px;letter-spacing:1px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.95rem;position:relative;padding-bottom:4px;display:inline-block;transition:color .3s var(--ease);}
+.footer-col ul li a::after{content:'';position:absolute;width:0;height:1px;bottom:0;left:50%;background:var(--principal);transition:all .3s var(--ease);transform:translateX(-50%);}
+.footer-col ul li a:hover{color:var(--blanco);}
+.footer-col ul li a:hover::after{width:100%;}
+.footer-bottom{margin-top:60px;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:6000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s var(--ease);}
+#lightbox.active{opacity:1;pointer-events:auto;}
+#lightbox img{max-width:90%;max-height:80%;object-fit:contain;transform:scale(.9);transition:transform .5s var(--ease),opacity .3s ease;border-radius:8px;border:1px solid var(--b-blue);}
+#lightbox.active img{transform:scale(1);}
+#close-lightbox{position:absolute;top:30px;right:30px;width:48px;height:48px;background:var(--principal);border:1px solid var(--b-blue);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2100;}
+#close-lightbox::before,#close-lightbox::after{content:'';position:absolute;width:22px;height:2px;background:white;transform:rotate(45deg);}
+#close-lightbox::after{transform:rotate(-45deg);}
+.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;background:var(--surface);border:1px solid var(--b-blue);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:white;font-size:2rem;z-index:2100;user-select:none;transition:border-color .2s;}
+.nav-arrow:hover{border-color:var(--principal);}
+.prev-arrow{left:30px;}.next-arrow{right:30px;}
+@media(max-width:950px){
+    section{height:auto;min-height:100vh;padding:100px 6% 80px;}
+    .coche-grid{grid-template-columns:1fr;}
+    .sponsor-grid-oro,.sponsor-grid-plata,.sponsor-grid-bronce{flex-direction:column;gap:20px;}
+    .sponsor-box.oro,.sponsor-box.plata,.sponsor-box.bronce{width:100%;max-width:420px;}
+    .sponsor-box.oro{height:200px;}.sponsor-box.plata{height:170px;}.sponsor-box.bronce{height:140px;}
+    footer{text-align:center;}
+    .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="cookie-banner">
+    <div class="cookie-content">
+        <p>Para que AT33 funcione correctamente, necesitamos que aceptes nuestros <a href="terminos-y-condiciones.html">Términos y Condiciones</a>. Solo usamos datos técnicos esenciales.</p>
+    </div>
+    <button class="btn-cookie-accept" onclick="acceptTerms()">Aceptar</button>
+</div>
+
+<div class="nav-wrap">
+    <nav class="nav-main" id="navMain">
+        <img src="Logo.png" alt="Logo" class="nav-logo">
+        <div class="nav-links">
+            <button class="nav-inicio-btn page-active" id="inicioBtn">
+                Inicio <span class="chevron" id="chevron"></span>
+            </button>
+            <a href="coche.html">Coche</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="patrocinio.html">Patrocinio</a>
+        </div>
+    </nav>
+    <nav class="nav-sub" id="navSub">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#coche-sec">Coche</a>
+        <a href="#donar">Impulsa</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </nav>
+</div>
+
+<div class="nav-mob-overlay" id="mobOverlay"></div>
+
+<div class="nav-mob-pill" id="mobPill">
+    <div class="menu-toggle">
+        <span id="ms1"></span><span id="ms2"></span><span id="ms3"></span>
+    </div>
+</div>
+
+<div class="nav-mob-panel" id="mobPanel">
+    <div class="nav-mob-close" id="mobClose"></div>
+    <img src="AT33.png" alt="AT33 Logo" class="nav-mob-logo">
+
+    <button class="mob-inicio-btn page-active" id="mobInicioBtn">
+        Inicio <span class="chevron" id="mobChevron"></span>
+    </button>
+    <div class="nav-mob-sub" id="mobSub">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#coche-sec">Coche</a>
+        <a href="#donar">Impulsa</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </div>
+
+    <a href="coche.html"    class="mob-page-link">Coche</a>
+    <a href="equipo.html"   class="mob-page-link">Equipo</a>
+    <a href="noticias.html" class="mob-page-link">Noticias</a>
+    <a href="patrocinio.html" class="mob-page-link">Patrocinio</a>
+</div>
+
+<div id="lightbox">
+    <div id="close-lightbox"></div>
+    <div class="nav-arrow prev-arrow">&lsaquo;</div>
+    <img src="" alt="Vista detallada del coche AT33">
+    <div class="nav-arrow next-arrow">&rsaquo;</div>
+</div>
+
+<section id="inicio">
+    <h1 class="sr-only">AT33 STEM Racing Team</h1>
+    <img src="Logo.png" alt="Logo AT33 STEM Racing Team" class="float-logo img-hero">
+</section>
+
+<div class="divider"></div><div class="spacer spacer-alt"></div>
+
+<section id="nosotros">
+    <div class="reveal nosotros-contenedor">
+        <h2 class="stem-h2">NOSOTROS</h2>
+        <div class="nosotros-img-col">
+            <img src="Nosotros.png" alt="Foto del equipo AT33" class="img-nosotros">
+        </div>
+        <div class="nosotros-texto-col">
+            <p class="stem-p">Somos un grupo de estudiantes de 4º de la ESO a Bachillerato que participamos en STEM Racing. Diseñamos y construimos nuestro propio coche de Fórmula 1 a escala, combinando creatividad, tecnología y trabajo en equipo.</p>
+            <p class="stem-p">Segundo año, mismas ganas y más experiencia. Tras ser el mejor rookie de la máxima categoría y quedar 10º de 35 equipos, a solo una décima del mejor coche, este año vamos a luchar por la victoria.</p>
+        </div>
+    </div>
+</section>
+
+<div class="spacer spacer-alt"></div><div class="divider"></div><div class="spacer"></div>
+
+<section id="coche-sec">
+    <div class="coche-div-wrap">
+        <h2 class="reveal coche-h2">NUESTRO COCHE</h2>
+        <div class="coche-grid" data-gallery="coche">
+            <div class="coche-box reveal zoomable"><img src="1.png" alt="Vista frontal"></div>
+            <div class="coche-box reveal zoomable"><img src="2.png" alt="Vista lateral"></div>
+            <div class="coche-box reveal zoomable"><img src="3.png" alt="Vista de lado"></div>
+            <div class="coche-box reveal zoomable"><img src="4.png" alt="Vista cenital"></div>
+        </div>
+    </div>
+</section>
+
+<div class="spacer"></div><div class="divider"></div><div class="spacer spacer-alt"></div>
+
+<section id="donar">
+    <div class="cta-divider reveal"></div>
+    <div class="reveal cta-wrapper">
+        <h2 class="cta-title">IMPULSA EL FUTURO</h2>
+        <p class="cta-text">
+            Ayúdanos a seguir diseñando, innovando y compitiendo
+            en STEM Racing junto a la próxima generación de ingenieros.
+        </p>
+        <a href="patrocinio.html" class="btn-buy">
+            SER Patrocinador
+        </a>
+    </div>
+    <div class="cta-divider reveal"></div>
+</section>
+
+<div class="spacer spacer-alt"></div><div class="divider"></div><div class="spacer"></div>
+
+<section id="patrocinadores">
+    <h2 class="reveal patrocinadores-title">PATROCINADORES</h2>
+    <div class="sponsor-level reveal">
+        <h3 class="sponsor-level-title">CLASE POLE POSITION</h3>
+        <div class="sponsor-grid-oro">
+            <div class="sponsor-box oro"><a href="#"><img src="Logo_Hankook.png" alt="Hankook" class="sponsor-logo"></a></div>
+            <div class="sponsor-box oro"><a href="#"><img src="Logo_colegio.png" alt="Alameda International School" class="sponsor-logo"></a></div>
+            <div class="sponsor-box oro"><a href="#"><img src="Logo_beyondcars.png" alt="Beyond Cars" class="sponsor-logo"></a></div>
+        </div>
+    </div>
+    <div class="sponsor-level reveal">
+        <h3 class="sponsor-level-title">CLASE PODIUM</h3>
+        <div class="sponsor-grid-plata">
+            <div class="sponsor-box plata"><a href="#"><img src="Logo_clinica.png" alt="Suarez-Burgos" class="sponsor-logo"></a></div>
+            <div class="sponsor-box plata"><img src="Logo_bahiafisio.png" alt="Bahía Fisio" class="sponsor-logo"></div>
+        </div>
+    </div>
+    <div class="sponsor-level reveal">
+        <h3 class="sponsor-level-title">CLASE GRID</h3>
+        <div class="sponsor-grid-bronce">
+            <div class="sponsor-box bronce"><img src="Logo_unatienda.png" alt="Unatienda" class="sponsor-logo"></div>
+            <div class="sponsor-box bronce"><a href="#"><img src="Logo_autoescuela.png" alt="Autoescuela Alameda" class="sponsor-logo"></a></div>
+        </div>
+    </div>
+</section>
+
+<div class="spacer"></div>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <ul><li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Participa</h4>
+            <ul><li><a href="patrocinio.html">Formulario de Patrocinio</a></li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Mapa del Sitio</h4>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#coche-sec">Nuestro Coche</a></li>
+                <li><a href="#donar">Impúlsanos</a></li>
+                <li><a href="#patrocinadores">Patrocinadores</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+                <li><a href="mailto:at33stemracingteamoficial@gmail.com">at33stemracingteamoficial@gmail.com</a></li>
+                <li><a href="https://www.instagram.com/at33.stemracingteam" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@AT33StemRacingTeam" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="https://x.com/AT33RacingTeam" target="_blank" rel="noopener">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 AT33 STEM Racing Team. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+    function checkTerms(){if(!localStorage.getItem('at33_terms_accepted_v1')){setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),1000);}}
+    function acceptTerms(){localStorage.setItem('at33_terms_accepted_v1','true');document.getElementById('cookie-banner').classList.remove('show');}
+    checkTerms();
+
+    const inicioBtn = document.getElementById('inicioBtn');
+    const navSub = document.getElementById('navSub');
+    const navMain = document.getElementById('navMain');
+    const chevron = document.getElementById('chevron');
+
+    inicioBtn.addEventListener('click', () => {
+        navSub.classList.toggle('open');
+        navMain.classList.toggle('sub-open');
+        chevron.classList.toggle('up');
+    });
+
+    const mobPill = document.getElementById('mobPill');
+    const mobPanel = document.getElementById('mobPanel');
+    const mobClose = document.getElementById('mobClose');
+    const mobOverlay = document.getElementById('mobOverlay');
+    const mobInicioBtn = document.getElementById('mobInicioBtn');
+    const mobSub = document.getElementById('mobSub');
+    const mobChevron = document.getElementById('mobChevron');
+
+    mobPill.addEventListener('click', () => {
+        mobPanel.classList.add('open');
+        mobOverlay.classList.add('open');
+    });
+
+    const closeNav = () => {
+        mobPanel.classList.remove('open');
+        mobOverlay.classList.remove('open');
+    };
+    mobClose.addEventListener('click', closeNav);
+    mobOverlay.addEventListener('click', closeNav);
+
+    mobInicioBtn.addEventListener('click', () => {
+        mobSub.classList.toggle('open');
+        mobChevron.classList.toggle('up');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    const closeLightbox = document.getElementById('close-lightbox');
+    
+    document.querySelectorAll('.zoomable').forEach(box => {
+        box.addEventListener('click', () => {
+            lightboxImg.src = box.querySelector('img').src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    closeLightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', (e) => {
+        if(e.target === lightbox) lightbox.classList.remove('active');
+    });
+</script>
+</body>
+</html>

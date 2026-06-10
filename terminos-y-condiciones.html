@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos y Condiciones | AT33</title>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="Favicon.png"/>
+
+<style>
+:root{
+    --principal:#212643;
+    --secundario:#66221d;
+    --bg-deep:#0a0a0a;
+    --bg-alt:#0f0f0f;
+    --surface:#141414;
+    --b-blue:rgba(33,38,67,.95);
+    --b-red:rgba(102,34,29,.40);
+    --blanco:#ffffff;
+    --ease:cubic-bezier(.4,0,.2,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Carter One',cursive;}
+html{scroll-behavior:smooth;background:var(--bg-deep);-webkit-font-smoothing:antialiased;}
+body{color:var(--blanco);overflow-x:hidden;text-align:center;width:100%;}
+
+/* --- NAV Y FOOTER ESTILOS --- */
+.nav-wrap{ position:fixed;top:0;left:0;width:100%; z-index:5000;display:flex;flex-direction:column; align-items:center;padding-top:22px; pointer-events:none; }
+.nav-main{ background:var(--surface); border:1px solid var(--b-blue); box-shadow:0 0 0 1px var(--b-red); width:90%;max-width:1200px;height:68px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
+.nav-main.sub-open{border-radius:16px 16px 0 0;}
+.nav-logo{height:38px;}
+.nav-links{display:flex;gap:8px;align-items:center;}
+.nav-links a{ color:var(--blanco);text-decoration:none;font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-links a:hover{background:rgba(102,34,29,.35);opacity:1;}
+.nav-inicio-btn{ display:flex;align-items:center;gap:7px; color:var(--blanco);font-size:.82rem; text-transform:uppercase;letter-spacing:1px;padding:9px 16px; border-radius:10px;opacity:.65;background:none;border:none; font-family:'Carter One',cursive;cursor:pointer; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-inicio-btn:hover{background:rgba(102,34,29,.35);opacity:1;}
+.chevron{ display:inline-block;width:7px;height:7px; border-right:2px solid currentColor;border-bottom:2px solid currentColor; transform:rotate(45deg);transition:transform .35s var(--ease); margin-top:-2px;flex-shrink:0; }
+.chevron.up{transform:rotate(-135deg);margin-top:2px;}
+.nav-sub{ width:90%;max-width:1200px; background:var(--surface); border:1px solid var(--b-blue);border-top:none; box-shadow:0 0 0 1px var(--b-red),0 16px 32px rgba(0,0,0,.6); border-radius:0 0 16px 16px; display:flex;align-items:center;justify-content:center; gap:8px; pointer-events:auto; max-height:0;overflow:hidden;opacity:0;padding:0 24px; transition:max-height .4s var(--ease),opacity .35s var(--ease),padding .4s var(--ease); }
+.nav-sub.open{max-height:100px;opacity:1;padding:14px 24px;}
+.nav-sub a{ color:var(--blanco);text-decoration:none;font-size:.78rem; text-transform:uppercase;letter-spacing:1px;padding:9px 18px; border-radius:9px;opacity:.6; transition:background .25s,opacity .25s;white-space:nowrap; }
+.nav-sub a:hover{background:rgba(102,34,29,.35);opacity:1;}
+
+@media (min-width: 1001px) { .nav-mob-pill, .nav-mob-panel, .nav-mob-overlay { display: none !important; } }
+@media(max-width:1000px){ 
+    .nav-wrap{ display:none; } 
+    .nav-mob-pill{ position:fixed;top:28px;right:28px;z-index:5000;width:52px;height:52px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px var(--b-red),0 8px 24px rgba(0,0,0,.6);border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto; } 
+    .nav-mob-pill .menu-toggle{ display:flex;flex-direction:column;gap:5px;pointer-events:none; } 
+    .nav-mob-pill .menu-toggle span{width:22px;height:2px;background:var(--blanco);transition:.4s var(--ease);} 
+    .nav-mob-panel{ position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);z-index:5000;width:270px;background:var(--surface);border:1px solid var(--b-blue);box-shadow:0 0 0 1px var(--b-red),0 24px 60px rgba(0,0,0,.8);border-radius:22px;padding:44px 18px 22px;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease); } 
+    .nav-mob-panel.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);} 
+    .nav-mob-close{ position:absolute;top:13px;right:13px;width:30px;height:30px;background:rgba(33,38,67,.4);border:1px solid var(--b-blue);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center; } 
+    .nav-mob-close::before,.nav-mob-close::after{content:'';position:absolute;width:14px;height:2px;background:white;transform:rotate(45deg);} 
+    .nav-mob-close::after{transform:rotate(-45deg);} 
+    .nav-mob-logo{height:30px;margin-bottom:12px;} 
+    .nav-mob-panel a.mob-page-link, .nav-mob-panel button.mob-inicio-btn{ width:100%;text-align:center; color:var(--blanco);text-decoration:none;font-size:.95rem; text-transform:uppercase;letter-spacing:1px;padding:10px 16px; border-radius:10px;opacity:.7; transition:background .25s,opacity .25s; background:none;border:none;font-family:'Carter One',cursive;cursor:pointer; display:flex;align-items:center;justify-content:center;gap:7px; } 
+    .nav-mob-sub{ width:100%; overflow:hidden;max-height:0;opacity:0; transition:max-height .4s var(--ease),opacity .3s var(--ease); display:flex;flex-direction:column;gap:2px; background:rgba(33,38,67,.12); border-radius:10px; padding:0 6px; } 
+    .nav-mob-sub.open{max-height:280px;opacity:1;padding:6px;} 
+    .nav-mob-overlay{ position:fixed;inset:0;z-index:4999; background:rgba(0,0,0,.5); opacity:0;pointer-events:none; transition:opacity .35s var(--ease); } 
+    .nav-mob-overlay.open{opacity:1;pointer-events:auto;} 
+}
+
+/* --- CONTENIDO TÉRMINOS --- */
+.terms-container{ padding:180px 5% 100px; max-width:900px; margin:0 auto; text-align:left; color:rgba(255,255,255,0.8); line-height:1.8; }
+.terms-container h1{ color:var(--blanco); font-size:2.5rem; margin-bottom:30px; text-align:center; }
+.terms-container h2{ color:var(--principal); font-size:1.5rem; margin-top:40px; margin-bottom:15px; }
+.terms-container ul{ margin-left:20px; margin-bottom:20px; }
+.terms-container li{ margin-bottom:5px; }
+
+footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 1px 0 var(--b-red);padding:80px 8% 40px;text-align:left;color:var(--blanco);}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
+.footer-col h4{text-transform:uppercase;font-size:1.1rem;margin-bottom:25px;letter-spacing:1px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col ul li a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.95rem;transition:color .3s var(--ease);}
+.footer-col ul li a:hover{color:var(--blanco);}
+.footer-bottom{margin-top:60px;padding-top:30px;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.85rem;color:rgba(255,255,255,.35);}
+@media(max-width:950px){ footer{text-align:center;} .footer-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+
+<body>
+
+<div class="nav-wrap">
+    <nav class="nav-main" id="navMain">
+        <img src="Logo.png" alt="Logo" class="nav-logo">
+        <div class="nav-links">
+            <a href="index.html" class="nav-inicio-btn" id="inicioBtn">Inicio <span class="chevron" id="chevron"></span></a>
+            <a href="proyecto.html">Proyecto</a>
+            <a href="competiciones.html">Competiciones</a>
+            <a href="equipo.html">Equipo</a>
+        </div>
+    </nav>
+    <nav class="nav-sub" id="navSub">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#coche-sec">Coche</a>
+        <a href="index.html#donar">Impulsa</a>
+        <a href="index.html#patrocinadores">Patrocinadores</a>
+    </nav>
+</div>
+
+<div class="nav-mob-overlay" id="mobOverlay"></div>
+<div class="nav-mob-pill" id="mobPill"><div class="menu-toggle"><span></span><span></span><span></span></div></div>
+<div class="nav-mob-panel" id="mobPanel">
+    <div class="nav-mob-close" id="mobClose"></div>
+    <img src="AT33.png" alt="AT33 Logo" class="nav-mob-logo">
+    <button class="mob-inicio-btn" id="mobInicioBtn">Inicio <span class="chevron" id="mobChevron"></span></button>
+    <div class="nav-mob-sub" id="mobSub">
+        <a href="index.html#nosotros">Nosotros</a>
+        <a href="index.html#coche-sec">Coche</a>
+        <a href="index.html#donar">Impulsa</a>
+        <a href="index.html#patrocinadores">Patrocinadores</a>
+    </div>
+    <a href="proyecto.html" class="mob-page-link">Proyecto</a>
+    <a href="competiciones.html" class="mob-page-link">Competiciones</a>
+    <a href="equipo.html" class="mob-page-link">Equipo</a>
+</div>
+
+<main class="terms-container">
+    <h1>Términos y Condiciones</h1>
+    <p><em>Última actualización: Junio 2026</em></p>
+    <p>Bienvenido al sitio web oficial de AT33 STEM Racing Team. El acceso y uso de esta página web implica la aceptación de los presentes Términos y Condiciones. Si no está de acuerdo con cualquiera de las disposiciones aquí establecidas, le recomendamos que no utilice este sitio.</p>
+
+    <h2>1. Titularidad del sitio web</h2>
+    <p>Este sitio web es gestionado por AT33 STEM Racing Team y sus respectivos equipos participantes en competiciones STEM Racing. La información publicada tiene fines exclusivamente informativos, divulgativos y de presentación de las actividades desarrolladas por el equipo.</p>
+
+    <h2>2. Propiedad intelectual</h2>
+    <p>Todos los contenidos presentes en este sitio web son propiedad de AT33 STEM Racing Team o de sus legítimos titulares y están protegidos por la normativa aplicable en materia de propiedad intelectual e industrial. Entre dichos contenidos se incluyen, entre otros:</p>
+    <ul>
+        <li>Textos y descripciones.</li>
+        <li>Fotografías e imágenes.</li>
+        <li>Logotipos e identidad visual del equipo.</li>
+        <li>Diseños gráficos y elementos visuales.</li>
+        <li>Vídeos y material audiovisual.</li>
+        <li>Documentación técnica.</li>
+        <li>Modelos CAD, bocetos y representaciones del vehículo.</li>
+        <li>Explicaciones del proceso de diseño, fabricación y desarrollo del coche.</li>
+        <li>Presentaciones, informes y materiales elaborados por el equipo.</li>
+        <li>Cualquier otro contenido original desarrollado por los integrantes de AT33 STEM Racing Team.</li>
+    </ul>
+
+    <h2>3. Uso no autorizado</h2>
+    <p>Queda expresamente prohibido, sin autorización previa y por escrito de AT33 STEM Racing Team:</p>
+    <ul>
+        <li>Copiar, reproducir o almacenar cualquier contenido del sitio web.</li>
+        <li>Distribuir, publicar o compartir materiales expuestos en esta página.</li>
+        <li>Modificar, adaptar o transformar los contenidos publicados.</li>
+        <li>Utilizar imágenes, fotografías o vídeos del equipo para cualquier finalidad.</li>
+        <li>Emplear logotipos, nombres o elementos de identidad visual sin autorización.</li>
+        <li>Presentar como propios materiales desarrollados por el equipo.</li>
+        <li>Utilizar la información técnica, documentación o explicaciones relacionadas con el desarrollo del vehículo para la elaboración de proyectos propios, competiciones o iniciativas similares sin autorización expresa.</li>
+        <li>Tomar como referencia directa los diseños, procesos o soluciones técnicas expuestas con fines de copia o reproducción.</li>
+        <li>Eliminar o alterar referencias relativas a la autoría o titularidad de los derechos sobre los contenidos.</li>
+    </ul>
+    <p>El acceso a este sitio web no concede licencia ni autorización alguna para el uso de los materiales publicados más allá de lo expresamente permitido en estos términos. El uso no autorizado de cualquiera de los elementos anteriormente mencionados podrá dar lugar al ejercicio de las acciones legales que correspondan.</p>
+
+    <h2>4. Uso permitido</h2>
+    <p>Se permite la consulta y visualización del contenido del sitio web exclusivamente con fines informativos y personales. El acceso a esta página no otorga ningún derecho de explotación, reproducción, distribución, comunicación pública o transformación sobre los materiales publicados.</p>
+
+    <h2>5. Formularios y patrocinio</h2>
+    <p>Este sitio web puede contener enlaces a formularios externos gestionados mediante servicios de terceros, como Google Forms, destinados a la solicitud de patrocinio o al contacto con el equipo. La cumplimentación y envío de dichos formularios es completamente voluntaria por parte del usuario. Los datos facilitados serán utilizados únicamente para gestionar la solicitud realizada y mantener la comunicación necesaria derivada de la misma.</p>
+
+    <h2>6. Protección de datos</h2>
+    <p>AT33 STEM Racing Team únicamente tendrá acceso a la información proporcionada voluntariamente por los usuarios a través de los formularios habilitados para tal fin. No se solicitarán datos distintos de aquellos estrictamente necesarios para gestionar la solicitud de patrocinio o contacto. Los datos facilitados no serán cedidos a terceros salvo obligación legal o cuando resulte necesario para la correcta gestión de la solicitud realizada. Los formularios empleados en este sitio web son gestionados mediante servicios externos proporcionados por Google. Al remitir información a través de dichos formularios, el usuario acepta también las condiciones y políticas de privacidad aplicables a dichos servicios.</p>
+
+    <h2>7. Enlaces externos</h2>
+    <p>Este sitio web puede incluir enlaces a páginas web externas con fines informativos o de contacto. AT33 STEM Racing Team no se responsabiliza del contenido, disponibilidad o políticas de privacidad de dichos sitios ajenos al equipo.</p>
+
+    <h2>8. Exclusión de responsabilidad</h2>
+    <p>Aunque se realizarán esfuerzos razonables para mantener actualizada y precisa la información publicada, AT33 STEM Racing Team no garantiza la ausencia de errores ni la disponibilidad permanente del sitio web. El equipo no será responsable de los daños o perjuicios que pudieran derivarse del uso de la información contenida en esta página o de la interrupción temporal del servicio.</p>
+
+    <h2>9. Modificaciones</h2>
+    <p>AT33 STEM Racing Team se reserva el derecho de modificar los presentes Términos y Condiciones en cualquier momento y sin previo aviso. Las modificaciones serán efectivas desde el momento de su publicación en este sitio web.</p>
+
+    <h2>10. Contacto</h2>
+    <p>Para cualquier consulta relacionada con estos Términos y Condiciones, puede contactar con el equipo a través del siguiente correo electrónico: <strong>at33stemracingteamoficial@gmail.com</strong></p>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li></ul></div>
+        <div class="footer-col"><h4>Participa</h4><ul><li><a href="patrocinio.html">Formulario de Patrocinio</a></li></ul></div>
+        <div class="footer-col"><h4>Mapa del Sitio</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="proyecto.html">Proyecto</a></li><li><a href="competiciones.html">Competiciones</a></li><li><a href="equipo.html">Equipo</a></li></ul></div>
+        <div class="footer-col"><h4>Contacto</h4><ul><li><a href="mailto:at33stemracingteamoficial@gmail.com">at33stemracingteamoficial@gmail.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 AT33 STEM Racing Team. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+    // JS Navegación
+    const inicioBtn = document.getElementById('inicioBtn');
+    const navSub = document.getElementById('navSub');
+    const navMain = document.getElementById('navMain');
+    const chevron = document.getElementById('chevron');
+
+    inicioBtn.addEventListener('mouseenter', () => { navSub.classList.add('open'); navMain.classList.add('sub-open'); chevron.classList.add('up'); });
+    navSub.addEventListener('mouseenter', () => { navSub.classList.add('open'); navMain.classList.add('sub-open'); chevron.classList.add('up'); });
+    inicioBtn.addEventListener('mouseleave', () => { setTimeout(() => { if (!navSub.matches(':hover')) { navSub.classList.remove('open'); navMain.classList.remove('sub-open'); chevron.classList.remove('up'); } }, 50); });
+    navSub.addEventListener('mouseleave', () => { navSub.classList.remove('open'); navMain.classList.remove('sub-open'); chevron.classList.remove('up'); });
+
+    const mobPill = document.getElementById('mobPill'), mobPanel = document.getElementById('mobPanel'), mobClose = document.getElementById('mobClose'), mobOverlay = document.getElementById('mobOverlay'), mobInicioBtn = document.getElementById('mobInicioBtn'), mobSub = document.getElementById('mobSub'), mobChevron = document.getElementById('mobChevron');
+    mobPill.addEventListener('click', () => { mobPanel.classList.add('open'); mobOverlay.classList.add('open'); });
+    const closeNav = () => { mobPanel.classList.remove('open'); mobOverlay.classList.remove('open'); };
+    mobClose.addEventListener('click', closeNav); mobOverlay.addEventListener('click', closeNav);
+    mobInicioBtn.addEventListener('click', () => { mobSub.classList.toggle('open'); mobChevron.classList.toggle('up'); });
+</script>
+</body>
+</html>
