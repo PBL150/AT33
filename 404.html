@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | AT33 STEM Racing Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="Favicon.png"/>
+<style>
+:root {
+    --principal: #212643;
+    --secundario: #66221d;
+    --bg-deep: #0a0a0a;
+    --b-blue: rgba(33,38,67,0.95);
+    --blanco: #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Carter One', cursive; }
+body { 
+    background: var(--bg-deep); 
+    color: var(--blanco); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    text-align: center; 
+    padding: 20px; 
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(var(--principal) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.data-box {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid var(--b-blue);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.error-code { font-size: 8rem; color: var(--secundario); line-height: 1; text-shadow: 4px 4px 0px var(--principal); }
+h2 { font-size: 2rem; text-transform: uppercase; margin: 20px 0; letter-spacing: 2px; }
+p { opacity: 0.7; margin-bottom: 30px; line-height: 1.6; }
+
+.telemetry-bar { height: 4px; width: 100%; background: #222; margin-bottom: 30px; position: relative; overflow: hidden; }
+.telemetry-bar::after { content: ''; position: absolute; height: 100%; width: 30%; background: var(--secundario); animation: scan 2s infinite linear; }
+
+@keyframes scan { 0% { left: -30%; } 100% { left: 100%; } }
+
+.btn-back {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--principal);
+    border: 1px solid var(--b-blue);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.btn-back:hover { background: var(--secundario); border-color: var(--secundario); }
+
+/* Decoración técnica */
+.corner { position: absolute; width: 50px; height: 50px; border: 2px solid var(--secundario); }
+.top-left { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+.bottom-right { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+</style>
+</head>
+<body>
+
+    <div class="corner top-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <div class="data-box">
+        <div class="error-code">404</div>
+        <h2>Error de telemetría</h2>
+        <div class="telemetry-bar"></div>
+        <p>El sistema ha detectado una ruptura en el trazado. Nuestro <b>diseño innovador</b> no encuentra los archivos solicitados en el servidor. Reintenta la conexión desde boxes.</p>
+        <a href="index.html" class="btn-back">Volver a pista</a>
+    </div>
+
+</body>
+</html>
