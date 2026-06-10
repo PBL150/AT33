@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-    <!-- ══ SEO PRIMARIO ══ -->
     <title>AT33 | Stem Racing Team</title>
     <meta name="description" content="Somos un equipo de STEM Racing formado por jóvenes apasionados por la ingeniería y la innovación. Diseñamos y construimos nuestro propio coche de Fórmula 1 a escala para competir a nivel nacional e internacional.">
     <meta name="keywords" content="AT33, STEM Racing Team, F1 in Schools, F1 en la Escuela, ingeniería estudiantil, diseño coches F1, competición automovilismo, estudiantes ingeniería, Alameda International School, Madrid, CAD, aerodinámica, bachillerato, Hankook, Beyond Cars, Stem Racing, Comunidad de Madrid, España, Madrid">
@@ -13,11 +12,9 @@
     <meta name="theme-color" content="#212643">
     <link rel="canonical" href="https://pbl150.github.io/AT33/index.html">
  
-    <!-- ══ HREFLANG (español) ══ -->
     <link rel="alternate" hreflang="es" href="https://pbl150.github.io/AT33/index.html">
     <link rel="alternate" hreflang="x-default" href="https://pbl150.github.io/AT33/index.html">
  
-    <!-- ══ OPEN GRAPH ══ -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pbl150.github.io/AT33/index.html">
     <meta property="og:site_name" content="AT33 STEM Racing Team">
@@ -29,7 +26,6 @@
     <meta property="og:image:alt" content="Logo oficial AT33 STEM Racing Team">
     <meta property="og:locale" content="es_ES">
  
-    <!-- ══ TWITTER / X CARD ══ -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AT33RacingTeam">
     <meta name="twitter:creator" content="@AT33RacingTeam">
@@ -38,7 +34,6 @@
     <meta name="twitter:image" content="https://pbl150.github.io/AT33/Logo.png">
     <meta name="twitter:image:alt" content="Logo AT33 STEM Racing Team">
  
-    <!-- ══ SCHEMA.ORG — Organization ══ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,7 +68,6 @@
     }
     </script>
  
-    <!-- ══ SCHEMA.ORG — WebSite (SearchAction para sitelinks) ══ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -93,7 +87,6 @@
     }
     </script>
  
-    <!-- ══ SCHEMA.ORG — BreadcrumbList ══ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -109,7 +102,6 @@
     }
     </script>
  
-    <!-- ══ SCHEMA.ORG — SportsTeam ══ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -135,12 +127,10 @@
     }
     </script>
  
-    <!-- ══ PRECONEXIONES PARA RENDIMIENTO (señal SEO) ══ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
  
-    <!-- ══ FAVICON Y APPLE TOUCH ══ -->
     <link rel="icon" type="image/png" sizes="32x32" href="Favicon.png">
     <link rel="apple-touch-icon" href="Favicon.png">
 
@@ -264,6 +254,9 @@ section{ height:auto; min-height:100vh; width:100%;display:flex;flex-direction:c
 .btn-buy{display:inline-block;padding:18px 45px;background:var(--principal);color:var(--blanco);text-decoration:none;border-radius:12px;border:1px solid var(--b-blue);border-bottom:4px solid #161a2d;box-shadow:0 4px 16px rgba(33,38,67,.4);transition:all .2s var(--ease);cursor:pointer;text-transform:uppercase;font-size:.9rem;margin-top:20px;position:relative;z-index:5;}
 .btn-buy:hover{transform:scale(1.05);background:#2b3461;}
 .btn-buy:active{transform:scale(.95) translateY(2px);border-bottom-width:2px;}
+/* Estilo específico para el botón del panfleto */
+.btn-panfleto { display:inline-block;padding:18px 45px;background:transparent;color:var(--blanco);text-decoration:none;border-radius:12px;border:1px solid var(--principal);transition:all .2s var(--ease);cursor:pointer;text-transform:uppercase;font-size:.9rem;margin-top:20px;margin-left:15px; }
+.btn-panfleto:hover{background:var(--principal);transform:scale(1.05);}
 footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 1px 0 var(--b-red);padding:80px 8% 40px;text-align:left;scroll-snap-align:end;color:var(--blanco);}
 .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;max-width:1200px;margin:0 auto;align-items:start;}
 .footer-col h4{text-transform:uppercase;font-size:1.1rem;margin-bottom:25px;letter-spacing:1px;}
@@ -414,9 +407,14 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
             Ayúdanos a seguir diseñando, innovando y compitiendo
             en STEM Racing junto a la próxima generación de ingenieros.
         </p>
-        <a href="https://www.missingwear.com" target="_blank" rel="noopener" class="btn-buy">
-            Conviértete en patrocinador 
-        </a>
+        <div>
+            <a href="https://www.missingwear.com" target="_blank" rel="noopener" class="btn-buy">
+                Conviértete en patrocinador 
+            </a>
+            <a href="panfleto.pdf" target="_blank" download="panfleto.pdf" class="btn-panfleto">
+                Ver dossier
+            </a>
+        </div>
     </div>
     <div class="cta-divider reveal"></div>
 </section>
