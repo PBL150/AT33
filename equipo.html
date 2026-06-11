@@ -48,7 +48,6 @@ body{
 /* ------------------- */
 /* BARRA NAVEGACIÓN    */
 /* ------------------- */
-
 .nav-wrap{ position:fixed;top:0;left:0;width:100%; z-index:5000;display:flex;flex-direction:column; align-items:center;padding-top:22px; pointer-events:none; }
 .nav-main{ background:var(--surface); border:1px solid var(--b-blue); box-shadow:0 0 0 1px var(--b-red); width:90%;max-width:1200px;height:68px;padding:0 24px; border-radius:16px;display:flex;justify-content:space-between; align-items:center;pointer-events:auto; transition:border-radius .4s var(--ease); position:relative;z-index:2; }
 .nav-main.sub-open{border-radius:16px 16px 0 0;}
@@ -102,7 +101,6 @@ body{
 /* ------------------- */
 /* SECCIÓN EQUIPO      */
 /* ------------------- */
-
 section{
     min-height:100vh;
     padding:180px 5% 100px;
@@ -120,6 +118,16 @@ section{
     margin:0 auto 120px;
 }
 
+/* Estilos nuevos para los logos */
+.team-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .team-title{
     font-size:clamp(2rem,5vw,3rem);
     text-transform:uppercase;
@@ -130,7 +138,6 @@ section{
 /* ------------------- */
 /* GRID MIEMBROS       */
 /* ------------------- */
-
 .members-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -155,16 +162,15 @@ section{
 }
 
 .member-divider{
-    width:200px; /* Tamaño aumentado */
-    height:4px;  /* Grosor aumentado */
+    width:200px;
+    height:4px;
     margin:0 0 20px 0;
     background:linear-gradient(90deg, transparent, var(--principal), var(--secundario), transparent);
-    transition:transform .4s var(--ease); /* Transición para el movimiento */
+    transition:transform .4s var(--ease);
 }
 
-/* Efecto al pasar el cursor por el contenedor del miembro */
 .member:hover .member-divider {
-    transform: scaleX(1.2); /* Se mueve/estira al hacer hover */
+    transform: scaleX(1.2);
 }
 
 .member h3{
@@ -178,7 +184,6 @@ section{
 }
 
 /* RESPONSIVE */
-
 @media(max-width:950px){
     .members-grid{
         grid-template-columns:1fr;
@@ -324,6 +329,7 @@ footer{
     <h1 class="page-title">Nuestros Equipos</h1>
 
     <div class="team-section">
+        <img src="Columba.png" alt="Logo Columba" class="team-logo">
         <h2 class="team-title">Columba Racing</h2>
         <div class="members-grid">
             <div class="member">
@@ -366,6 +372,7 @@ footer{
     </div>
 
     <div class="team-section">
+        <img src="Laquimia.png" alt="Logo Laquimia" class="team-logo">
         <h2 class="team-title">Laquimia Racing</h2>
         <div class="members-grid">
             <div class="member">
@@ -409,27 +416,23 @@ footer{
 </section>
 
 <script>
-    // Variables de navegación ordenador
     const inicioBtn = document.getElementById('inicioBtn');
     const navSub = document.getElementById('navSub');
     const navMain = document.getElementById('navMain');
     const chevron = document.getElementById('chevron');
 
-    // Abrir al pasar el cursor sobre "Inicio"
     inicioBtn.addEventListener('mouseenter', () => {
         navSub.classList.add('open');
         navMain.classList.add('sub-open');
         chevron.classList.add('up');
     });
 
-    // Mantener abierto mientras el cursor esté en la barra secundaria
     navSub.addEventListener('mouseenter', () => {
         navSub.classList.add('open');
         navMain.classList.add('sub-open');
         chevron.classList.add('up');
     });
 
-    // Cerrar al salir de "Inicio"
     inicioBtn.addEventListener('mouseleave', () => {
         setTimeout(() => {
             if (!navSub.matches(':hover')) {
@@ -440,14 +443,12 @@ footer{
         }, 50);
     });
 
-    // Cerrar al salir de la barra secundaria
     navSub.addEventListener('mouseleave', () => {
         navSub.classList.remove('open');
         navMain.classList.remove('sub-open');
         chevron.classList.remove('up');
     });
 
-    // Variables de navegación móvil
     const mobPill = document.getElementById('mobPill');
     const mobPanel = document.getElementById('mobPanel');
     const mobClose = document.getElementById('mobClose');
@@ -456,7 +457,6 @@ footer{
     const mobSub = document.getElementById('mobSub');
     const mobChevron = document.getElementById('mobChevron');
 
-    // Funciones menú móvil
     mobPill.addEventListener('click', () => {
         mobPanel.classList.add('open');
         mobOverlay.classList.add('open');
