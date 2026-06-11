@@ -150,15 +150,21 @@ section{
     transition:transform .3s ease;
 }
 
-.member img:hover{
+.member:hover img{
     transform:translateY(-10px);
 }
 
 .member-divider{
-    width:120px;
-    height:2px;
-    margin:25px 0 20px;
+    width:200px; /* Tamaño aumentado */
+    height:4px;  /* Grosor aumentado */
+    margin:0 0 20px 0;
     background:linear-gradient(90deg, transparent, var(--principal), var(--secundario), transparent);
+    transition:transform .4s var(--ease); /* Transición para el movimiento */
+}
+
+/* Efecto al pasar el cursor por el contenedor del miembro */
+.member:hover .member-divider {
+    transform: scaleX(1.2); /* Se mueve/estira al hacer hover */
 }
 
 .member h3{
@@ -267,7 +273,6 @@ footer{
 </head>
 
 <body>
-
 <div class="nav-wrap">
     <nav class="nav-main" id="navMain">
         <img src="Logo.png" alt="Logo" class="nav-logo">
