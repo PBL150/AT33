@@ -81,6 +81,10 @@ section{min-height:100vh;padding:180px 5% 100px;background:var(--bg-deep);}
 .race-card:hover::before { opacity: 1; }
 .card-inner { background: var(--bg-deep); padding: 30px; position: relative; z-index: 2; flex-grow: 1; display: flex; flex-direction: column; cursor: pointer; }
 
+/* Logo dentro de la card */
+.team-logo-card { width: 120px; height: auto; margin: 0 auto 20px auto; display: block; }
+.card-inner h3 { margin-bottom: 15px; font-size: 1.4rem; }
+
 /* Galería */
 .gallery-wrap { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; pointer-events: none; }
 .gallery-item { flex: 0 0 100%; height: 240px; border-radius: 4px; overflow: hidden; clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); }
@@ -163,6 +167,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
         <div class="race-grid">
             <div class="race-card" onclick="openViewer(['2025-2.png', '2025-3.png', '2025-4.png', '2025-5.png'])">
                 <div class="card-inner">
+                    <img src="Columba.png" alt="Logo" class="team-logo-card">
                     <div class="gallery-wrap"><div class="gallery-item"><img src="2.png"></div></div>
                     <div class="stats-box">
                         <div class="stat-item"><span class="stat-label">Posición</span><span class="stat-val">10º</span></div>
@@ -179,6 +184,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
         <div class="race-grid">
             <div class="race-card" onclick="openViewer(['imagen3.jpg'])">
                 <div class="card-inner">
+                    <img src="Columba.png" alt="Columba" class="team-logo-card">
                     <h3>Columba Racing</h3>
                     <div class="gallery-wrap"><div class="gallery-item"><img src="imagen3.jpg"></div></div>
                     <div class="stats-box">
@@ -190,6 +196,7 @@ footer{background:#0d0d0d;border-top:1px solid var(--b-blue);box-shadow:inset 0 
             </div>
             <div class="race-card" onclick="openViewer(['imagen4.jpg', 'imagen5.jpg'])">
                 <div class="card-inner">
+                    <img src="Laquimia.png" alt="Laquimia" class="team-logo-card">
                     <h3>Laquimia Racing</h3>
                     <div class="gallery-wrap"><div class="gallery-item"><img src="imagen4.jpg"></div></div>
                     <div class="stats-box">
